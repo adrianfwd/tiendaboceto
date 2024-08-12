@@ -1,5 +1,5 @@
 var articulos = [];
-
+var articulos = JSON.parse(localStorage.getItem('articulos')) || [];
 function crearArticulo() {
   var nombre = document.getElementById("nombre").value;
   var precio = document.getElementById('precio').value;
@@ -28,6 +28,7 @@ function mostrarArticulos() {
   }
 
   for (var i = 0; i < articulos.length; i++) {
+
     var articulo = articulos[i];
 
     let dArticulo = document.createElement("p")
@@ -36,7 +37,7 @@ function mostrarArticulos() {
   }
 
   var articuloDiv = document.createElement('div');
-  articuloDiv.appendChild(dArticulo);
+  aticuloDiv.appendChild(dArticulo);
 
 }
 
